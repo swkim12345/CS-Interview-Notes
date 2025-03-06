@@ -48,9 +48,10 @@ for i in range(N):
         if len(stack) == 0 or stack[-1] > arr[i]:
             stack.append(arr[i])
             break
-        # 스택(앞) < arr(뒤) -> 볼 수 없음 -> 볼 수 있을 때 까지 pop
+        # 스택(앞) <= arr(뒤) -> 볼 수 없음 -> 볼 수 있을 때 까지 pop
         else:
             stack.pop()
     answer += len(stack) - 1
 
 print(answer)
+

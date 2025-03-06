@@ -13,7 +13,7 @@ arr = list(map(int, input().split()))
 for i in range(N - 1, -1, -1):
     while True:
         # 뒤에서부터 체크,만약 크다면 -> 앞 < 뒤, 답 아님, 그냥 stack에 추가
-        if len(stack) == 0 or stack[-1][1] > arr[i]:
+        if len(stack) == 0 or arr[i] < stack[-1][1]:
             tup = (i, arr[i])
             stack.append(tup)
             break
@@ -23,5 +23,13 @@ for i in range(N - 1, -1, -1):
             answer[stack[-1][0]] = i + 1
             stack.pop()
 
-for i in answer:
-    print(i, end=" ")
+# for i in answer:
+#     print(i, end=" ")
+
+print(*answer)
+
+'''
+탑 탑 탑 
+ <- <-
+index 구하기
+'''
